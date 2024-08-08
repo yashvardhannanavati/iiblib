@@ -109,6 +109,18 @@ def fixture_builds_page2_json(fixture_add_build_details_json2):
     return json
 
 
+@pytest.fixture
+def fixture_add_deprecations_build_details_json(fixture_base_build_details_json):
+    json = {
+        "id": 1,
+        "batch": 1,
+        "deprecation_schema": "link/to/deprecation/schema",
+        "operator_package": "my_package",
+    }
+    json.update(fixture_base_build_details_json)
+    return json
+
+
 def test_iib_build_details_pager(
     fixture_builds_page1_json,
     fixture_builds_page2_json,
